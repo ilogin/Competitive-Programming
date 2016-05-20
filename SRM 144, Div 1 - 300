@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+	string s;
+	cin >> s;
+
+	cout << s << endl;
+
+	int count = s.length();
+
+	//assume first character is 0
+	bool ans = true;
+	vector <int> a1;
+
+	a1.push_back(0);
+	a1.push_back(s[0]);
+
+	if (s[0] > 1) ans = false;
+
+	int test = s[1] - a1[0] - a1[1];
+	a1.push_back(test);
+
+	for (int a = 2; a < count; a++){
+		test = s[a+1] - a1[a-1] - a1[a];
+		if (test > 1){
+			break;
+			ans == false;
+		}
+		a1.push_back(test);
+	}
+
+	for (vector <int>::const_iterator i = a1.begin(); i != a1.end(); i++)
+		cout << *i;
+
+	return 0;
+}
