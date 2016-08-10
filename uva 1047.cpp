@@ -18,6 +18,7 @@ typedef map<string, int> msi;
 
 int main(){
 
+	//Might be a good idea to compare and contrast my approach and someone else's
 	int all, num; while (scanf("%d %d", &all, &num) != EOF){
 		int towers[all]; for (int i = 0; i < all; i++) cin >> towers[i];
 		int overlap; cin >> overlap; int PIE[overlap][all];
