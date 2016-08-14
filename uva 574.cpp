@@ -15,8 +15,14 @@ typedef pair<int, int> ii;
 typedef vector<ii> vii;
 typedef set<int> si;
 typedef map<string, int> msi;
+int n, t, numbers[13];
 
 int main(){
+
+	while(scanf("%d %d"), &t, &n, n != 0 && t != 0){
+
+		for (int i = 0; i < n; i++) cin >> numbers[i];
+	}
 
 	return 0;
 }
