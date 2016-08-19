@@ -38,10 +38,7 @@ int main(){
 				}
 			}
 
-			//This is where the code gets funky; figure out a way to detract the running sum if there's an overlap
-			//Possible solution: when getting the input of overlaps, make each line a bitset and use a map[bitset] = detract_value
-					//Then in this section, iterate through the overlaps, use bit manipulation to see if the map[bitset] matches,
-					//and detract if it does.
+			//Fix this so that it accounts for implicit overlaps
 			for (int j = 0; j < overlap; j++){
 				for (int k = 1; k <= PIE[j][0]; k++){
 					if (!(i & (1 << PIE[j][k]))) continue;
