@@ -4,6 +4,8 @@ TASK: milk2
 LANG: C++
 */
 
+//link to explanation: https://codestapler.wordpress.com/2016/07/22/usaco-1-2-milking-cows-c-solution/
+
 #include <bits/stdc++.h>
 #define forit(it, a) for(__typeof(a.begin()) it = a.begin(); it != a.end(); it++)
 #define pb push_back
