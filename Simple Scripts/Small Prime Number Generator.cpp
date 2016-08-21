@@ -1,43 +1,31 @@
-/*
-ID: 1107501
-TASK: milk2
-LANG: C++
-*/
-
 #include <bits/stdc++.h>
 #define forit(it, a) for(__typeof(a.begin()) it = a.begin(); it != a.end(); it++)
 #define pb push_back
-#define mp make_pair
 using namespace std;
-typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> ii;
-typedef vector<ii> vii;
 typedef set<int> si;
-typedef map<string, int> msi;
 
 int main(){
 
-	int begin, end;
-	begin = 2; end = 43;
+	//This script outputs all products of distinct primes.
 
-	bool check[end]; memset(check, 1, sizeof check);
-	int num_primes = 0;
+	int begin(2), end(43);
+
+	//Record all primes between begin and end
+	bool check[end]; memset(check, true, sizeof check);
+	int num_primes = 0; vi primes;
 	for (int i = 2; i <= end; i++)
 		for (int j = 0; j <= end; j++){
 			if (j % i == 0 && j != i) check[j] = false;
 		}
-
-	vector<int>primes, products;
 	for (int i = begin; i <= end; i++) if (check[i] == true) primes.pb(i);
 
-	for (int i = 0; i < primes.size(); i++){
-		int product = primes[i] * primes[i+1];
-		if (product > end) break;
-		else products.pb(product);
-	}
+	//Output all products of distinct primes (e.g. 3 * 7 = 21, 2 * 5 = 10)
+	si products;
+	forit(it1, primes) forit(it2, primes)
+			if (it1 != it2 && *it1 * *it2 <= end) products.insert(*it1 * *it2);
 
-	for (int i = 0; i < products.size(); i++) printf("%d ", products[i]);
+	forit(it, products) printf("%d ", *it);
 
 	return 0;
 }
