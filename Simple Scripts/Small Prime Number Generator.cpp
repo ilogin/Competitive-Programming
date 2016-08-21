@@ -22,12 +22,22 @@ int main(){
 	begin = 2; end = 43;
 
 	bool check[end]; memset(check, 1, sizeof check);
+	int num_primes = 0;
 	for (int i = 2; i <= end; i++)
 		for (int j = 0; j <= end; j++){
 			if (j % i == 0 && j != i) check[j] = false;
 		}
 
-	for (int i = begin; i <= end; i++) if (check[i] == true) printf("%d ", i);
+	vector<int>primes, products;
+	for (int i = begin; i <= end; i++) if (check[i] == true) primes.pb(i);
+
+	for (int i = 0; i < primes.size(); i++){
+		int product = primes[i] * primes[i+1];
+		if (product > end) break;
+		else products.pb(product);
+	}
+
+	for (int i = 0; i < products.size(); i++) printf("%d ", products[i]);
 
 	return 0;
 }
