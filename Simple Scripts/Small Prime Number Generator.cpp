@@ -7,7 +7,7 @@ typedef set<int> si;
 
 int main(){
 
-	//This script outputs all products of distinct primes.
+	//This script outputs all products of distinct primes (e.g. 3 * 7 = 21, 2 * 5 = 10)
 
 	int begin(2), end(43);
 
@@ -20,7 +20,7 @@ int main(){
 		}
 	for (int i = begin; i <= end; i++) if (check[i] == true) primes.pb(i);
 
-	//Output all products of distinct primes (e.g. 3 * 7 = 21, 2 * 5 = 10)
+	//Output
 	si products;
 	forit(it1, primes) forit(it2, primes)
 			if (it1 != it2 && *it1 * *it2 <= end) products.insert(*it1 * *it2);
