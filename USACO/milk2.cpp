@@ -49,6 +49,7 @@ int main(){
 		}
 		if (vec[i].second > current_greatest) current_greatest = vec[i].second;
 	}
+	if(current_greatest-left>cont)cont=current_greatest-left;
 
 	fout << cont << " " << idle << "\n";
 
